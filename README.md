@@ -19,16 +19,16 @@ The dashboard leverages **Power BI visualizations** to deliver clear, actionable
 
 🧮 DAX Calculations Used
 ```DAX
-Total News = COUNTROWS('FakeNews')
+Total News = COUNTROWS('fake_news_dataset')
 
 Fake News Count = CALCULATE(
-    COUNTROWS('FakeNews'),
-    'FakeNews'[label] = "Fake"
+    COUNTROWS('fake_news_dataset'),
+   'fake_news_dataset'[label] = "Fake"
 )
 
 Real News Count = CALCULATE(
-    COUNTROWS('FakeNews'),
-    'FakeNews'[label] = "Real"
+    COUNTROWS('fake_news_dataset'),
+    'fake_news_dataset'[label] = "Real"
 )
 
 Fake News % = DIVIDE([Fake News Count], [Total News], 0) * 100
